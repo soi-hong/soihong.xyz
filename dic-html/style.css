@@ -1,0 +1,30 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+	font-size: 12pt;
+    margin: 20px;
+    line-height: 20pt;
+    background-color: lightyellow;
+}
+
+.html-h1 {
+	margin-bottom: 150px;
+	text-align: center;
+}
+
+div {
+	width: 550px;
+	
+}
+.flex {
+	display: flex;
+	gap: 12px;
+}
+
+@media screen and (max-width: 704px) {
+
+}

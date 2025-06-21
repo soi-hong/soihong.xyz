@@ -1,0 +1,112 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    width: 500%;
+}
+
+details {
+    cursor: ne-resize;
+}
+
+.indent {
+    margin-left: 160px;
+}
+
+.indent2 {
+    margin-left: 320px;
+}
+
+.indent3 {
+    margin-left: calc(160px * 3);
+}
+.indent4 {
+    margin-left: calc(160px * 4);
+}
+.indent5 {
+    margin-left: calc(160px * 5);
+}
+.indent6 {
+    margin-left: calc(160px * 6);
+}
+.indent7 {
+    margin-left: calc(160px * 7);
+}
+.indent8 {
+    margin-left: calc(160px * 8);
+}
+.indent9 {
+    margin-left: calc(160px * 9);
+}
+.indent10 {
+    margin-left: calc(160px * 10);
+}
+.indent11 {
+    margin-left: calc(160px * 11);
+}
+.indent12 {
+    margin-left: calc(160px * 12);
+}
+.indent13 {
+    margin-left: calc(160px * 13);
+}
+.indent14 {
+    margin-left: calc(160px * 14);
+}
+.indent15 {
+    margin-left: calc(160px * 15);
+}
+.indent16 {
+    margin-left: calc(160px * 16);
+}
+.indent17 {
+    margin-left: calc(160px * 17);
+}
+.indent18 {
+    margin-left: calc(160px * 18);
+}
+
+
+img{
+    height: 250px;
+}
+
+summary::marker {
+  color: olivedrab;
+  content: "" ;
+}
+
+li::marker {
+    color: ; 
+    font-size: ; 
+    content: ""; 
+}
+
+img:hover {
+    filter: blur(5px);
+}
+
+figure {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: ;
+}
+
+.d {
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
