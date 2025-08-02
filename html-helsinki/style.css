@@ -12,6 +12,7 @@ body {
   font-size: 10.5pt;
   line-height: 15pt;
   text-align: center;
+  word-break: break-all;
 }
 
 
@@ -19,7 +20,7 @@ table {
   
   height: 100%;
   margin: auto;
-  margin-top: -20px;
+  margin-top: 0px;
   text-align: center;
   width: 100%;
   table-layout: fixed;
