@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 2px;
+  padding: 2px;
+  font-family: sans-serif;
+  font-size: 10.5pt;
+  line-height: 15pt;
+  text-align: center;
+}
+
+
+table {
+  
+  height: 100%;
+  margin: auto;
+  margin-top: -20px;
+  text-align: center;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table, tr, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+td {
+  height: 300px;
+  overflow: hidden;
+}
+
+/*.a1 {
+  color: gray;
+}*/
+
+
+
+
+@media screen and (max-width: 704px) {
+
+}
+
+
