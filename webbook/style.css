@@ -85,7 +85,7 @@ a {
 /** Globals */
 /************/
 html {
-    font-size: 11px;
+    font-size: 20px;
     height: 100%;
     font-family: sans-serif;
 }
@@ -219,14 +219,14 @@ body {
     user-select: none;
     -webkit-user-select: none;
     font-family: sanserif;
-    font-size: 11pt;
+    font-size: 20pt;
 }
 
 .page.front .page-content {
     padding: 1rem 1rem 1rem 1rem;
     justify-content: center;
     align-items: center;
-    font-size: 15pt;
+    font-size: 20pt;
 }
 
 .page.back .page-content {
@@ -268,6 +268,6 @@ body {
 
 .page-content p {
     font-weight: 400;
-    font-size: 11pt;
+    font-size: 20pt;
     line-height: 1.4;
 }
