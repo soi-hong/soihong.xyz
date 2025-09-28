@@ -1,0 +1,273 @@
+/**********/
+/** Reset */
+/**********/
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img,
+video {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/************/
+/** Globals */
+/************/
+html {
+    font-size: 11px;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    word-break: keep-all;
+}
+
+h3 {
+    font-size: 7px;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+/**********/
+/** Style */
+/**********/
+
+/* Book */
+:root {
+    --book-width: 300px;
+    --book-height: 100px;
+}
+
+#webbook {
+    touch-action: none;
+}
+
+#webbook .section {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    perspective: 3000px;
+}
+
+.book {
+    position: relative;
+    width: var(--book-width);
+    height: var(--book-height);
+    transform-style: preserve-3d;
+    transform: rotateX(20deg);
+    transform-origin: center center;
+}
+
+@media screen and (max-width: 900px) {
+    #webbook .section {
+        perspective: 5000px;
+    }
+
+    .book {
+        transform: rotateX(0deg) scale(0.7);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #webbook .section {
+        perspective: 7000px;
+    }
+
+    .book {
+        transform: rotateX(15deg) scale(0.6);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #webbook .section {
+        perspective: 9000px;
+    }
+
+    .book {
+        transform: rotateX(10deg) scale(0.4);
+    }
+}
+
+/* Leaf & page layout */
+.leaf {
+    position: absolute;
+    left: calc(var(--book-width) / 2);
+    width: 50%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 2s ease-out;
+    cursor: pointer;
+    transform: rotateY(0deg);
+    transform-origin: left;
+}
+
+.leaf.flipped {
+    transform: rotateY(-180deg);
+    transform-origin: left;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    backface-visibility: hidden;
+}
+
+.page.front {
+    background: linear-gradient(90deg, #aaa, #fff 1.5%, #fff);
+}
+
+.page.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(270deg, #aaa, #fff 1.5%, #fff);
+}
+
+/* Page content */
+.page-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: sanserif;
+    font-size: 11pt;
+}
+
+.page.front .page-content {
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.page.back .page-content {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.page-content.image {
+    justify-content: center;
+    align-items: center;
+}
+
+.page.front .page-content.image, .page.back .page-content.image {
+    padding: 4rem;
+}
+
+.page-content.overflow {
+    overflow-y: auto;
+}
+
+.page-content .en {
+    position: relative;
+    font-size: 1.25rem;
+    top: 0.05rem;
+}
+
+.page-content a {
+    color: black;
+    text-decoration: underline;
+    justify-content: center;
+    align-items: center;
+    font-size: 11pt;
+}
+
+.page-content h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.page-content p {
+    font-weight: 400;
+    font-size: 11pt;
+    line-height: 1.4;
+}
