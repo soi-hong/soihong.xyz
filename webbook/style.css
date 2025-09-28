@@ -86,6 +86,7 @@ a {
 html {
     font-size: 11px;
     height: 100%;
+    font-family: sans-serif;
 }
 
 body {
@@ -94,9 +95,6 @@ body {
     word-break: keep-all;
 }
 
-h3 {
-    font-size: 7px;
-}
 
 .main {
     width: 100%;
