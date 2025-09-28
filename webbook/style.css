@@ -85,7 +85,7 @@ a {
 /** Globals */
 /************/
 html {
-    font-size: 20px;
+    font-size: 14px;
     height: 100%;
     font-family: sans-serif;
 }
@@ -114,8 +114,8 @@ body {
 
 /* Book */
 :root {
-    --book-width: 600px;
-    --book-height: 200px;
+    --book-width: 300px;
+    --book-height: 100px;
 }
 
 #webbook {
@@ -219,14 +219,14 @@ body {
     user-select: none;
     -webkit-user-select: none;
     font-family: sanserif;
-    font-size: 20pt;
+    font-size: 14pt;
 }
 
 .page.front .page-content {
     padding: 1rem 1rem 1rem 1rem;
     justify-content: center;
     align-items: center;
-    font-size: 20pt;
+    font-size: 14pt;
 }
 
 .page.back .page-content {
@@ -257,7 +257,7 @@ body {
     text-decoration: underline;
     justify-content: center;
     align-items: center;
-    font-size: 20pt;
+    font-size: 14pt;
 }
 
 .page-content h1 {
@@ -268,6 +268,6 @@ body {
 
 .page-content p {
     font-weight: 400;
-    font-size: 20pt;
+    font-size: 14pt;
     line-height: 1.4;
 }
