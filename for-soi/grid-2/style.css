@@ -1,0 +1,21 @@
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 5px;
+  
+}
+
+.cell{
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border: 1px dotted #000;
+  color: inherit;
+}
+
+@media (max-width: 900px){
+  .grid-4{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .grid-4{ grid-template-columns: 1fr; }
+}

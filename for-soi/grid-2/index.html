@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>제목</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+</head>
+<body>
+
+<div class="grid">
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+
+   <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+</div>
+
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+
+  const channelSlug = "indexing-center/drawing-lllezov5emg;"
+  const token = "Adaisb8Bb52mWC-TURprB7SF6YQsZxPM5FNlm26ZgV4"; // ← 토큰만 넣으면 끝
+
+  const cells = document.querySelectorAll(".cell");
+
+  try {
+    const response = await fetch(
+      `https://api.are.na/v2/channels/${channelSlug}?per=50`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    const data = await response.json();
+
+    // 이미지 블록만 필터
+    const imageBlocks = data.contents.filter(
+      block => block.class === "Image"
+    );
+
+    imageBlocks.forEach((block, index) => {
+      if (!cells[index]) return;
+
+      // 링크 생성 (블록 페이지로 연결)
+      const link = document.createElement("a");
+      link.href = block.source?.url || block.url;
+      link.target = "_blank";
+
+      // 이미지
+      const img = document.createElement("img");
+      img.src = block.image.original.url;
+      img.style.width = "100%";
+
+      // 코멘트
+      const caption = document.createElement("p");
+      caption.textContent =
+        block.description || block.title || "";
+      caption.style.fontSize = "12px";
+      caption.style.marginTop = "6px";
+
+      link.appendChild(img);
+      cells[index].appendChild(link);
+      cells[index].appendChild(caption);
+    });
+
+  } catch (error) {
+    console.error("Are.na 불러오기 실패:", error);
+  }
+
+});
+</script>
+
+</body>
+
+</body>
+</html>
