@@ -85,7 +85,7 @@ a {
 /** Globals */
 /************/
 html {
-    font-size: 14px;
+    font-size: 11.5px;
     height: 100%;
     font-family: sans-serif;
 }
@@ -197,6 +197,7 @@ body {
     top: 0;
     box-shadow: 0 2px 2px rgba(0,0,0,0.1);
     backface-visibility: hidden;
+
 }
 
 .page.front {
@@ -219,14 +220,15 @@ body {
     user-select: none;
     -webkit-user-select: none;
     font-family: sanserif;
-    font-size: 14pt;
+    font-size: 11.5pt
+
 }
 
 .page.front .page-content {
     padding: 1rem 1rem 1rem 1rem;
     justify-content: center;
     align-items: center;
-    font-size: 14pt;
+    font-size: 11.5pt;
 }
 
 .page.back .page-content {
@@ -257,17 +259,17 @@ body {
     text-decoration: underline;
     justify-content: center;
     align-items: center;
-    font-size: 14pt;
+    font-size: 11.5pt;
 }
 
 .page-content h1 {
     font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.4;
+    font-size: 1.4rem;
+    line-height: 1.2;
 }
 
 .page-content p {
     font-weight: 400;
-    font-size: 14pt;
-    line-height: 1.4;
+    font-size: 11.5pt;
+    line-height: 1.2;
 }
