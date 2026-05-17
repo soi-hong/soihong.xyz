@@ -1,7 +1,7 @@
 .grid{
   display: grid;
   grid-template-columns: repeat(6, 1fr); 
-  gap: 15px;
+  gap: 13px;
   padding: 400px;
 }
 
@@ -21,7 +21,7 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
 
-  border: 1px solid #33ff33;
+  border: 1.1px solid #33ff33;
 
   box-shadow:
     0 0 3px #33ff33,
@@ -36,9 +36,9 @@
   object-fit: cover;
   display: block;
 
-  opacity: 0.9;
-  filter: brightness(5);
-  transition: all 0.9s ease;
+  opacity: 3.3;
+  filter: brightness(13);
+  transition: all 0.2s ease;
 }
 
 .image-wrap:hover img{
@@ -52,6 +52,9 @@
   font-size: 7pt;
   text-align: center;
   line-height: 1.2;
+  font-family: monospace;
+  /*color: lightgray;*/
+
 }
 
 .time{
@@ -62,9 +65,10 @@
 
   text-align: center;
 
-  font-size: 6.6pt;
+  font-size: 6.8pt;
   line-height: 1;
-  font-family: sans-serif;
+  font-family: monospace;
+  /*color: lightgray;*/
 }
 
 /* mobile */

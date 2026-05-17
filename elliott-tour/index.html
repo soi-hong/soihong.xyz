@@ -52,21 +52,37 @@ async function loadArenaImages() {
 
   try {
 
-    const response = await fetch(
-      `https://api.are.na/v2/channels/${channel}`
-    );
+  const response = await fetch(
+  `https://api.are.na/v2/channels/${channel}?per=100&page=1`
+);
 
-    if (!response.ok) {
-      throw new Error("Fetch failed");
-    }
+  let page = 1;
+let all = [];
 
-    const data = await response.json();
+while (true) {
 
-    console.log(data);
+  const res = await fetch(
+    `https://api.are.na/v2/channels/${channel}?per=100&page=${page}`
+  );
 
-    const contents = Array.isArray(data.contents)
-      ? data.contents
-      : [];
+  const data = await res.json();
+
+  const contents = data.contents || [];
+
+  all = all.concat(contents);
+
+  if (contents.length < 100) break;
+
+  page++;
+}
+
+
+
+const data = await response.json();
+
+const contents = data.contents || [];
+
+
 
     contents.forEach(block => {
 
