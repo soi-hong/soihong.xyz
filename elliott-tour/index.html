@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Elliot tour</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+</head>
+<body>
+
+<div class="time"></div>
+
+<div class="grid"></div>
+
+<script>
+
+
+// 현재 시간 표시
+function updateTime() {
+
+  const time = document.querySelector(".time");
+
+  const now = new Date();
+
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const date = String(now.getDate()).padStart(2, "0");
+
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+
+  time.textContent =
+    `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
+}
+
+updateTime();
+
+setInterval(updateTime, 1000);
+
+
+const channel = "elliott-tour-dmuv9ogq4xg";
+
+async function loadArenaImages() {
+
+  const grid = document.querySelector(".grid");
+
+  if (!grid) return;
+
+  try {
+
+    const response = await fetch(
+      `https://api.are.na/v2/channels/${channel}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Fetch failed");
+    }
+
+    const data = await response.json();
+
+    console.log(data);
+
+    const contents = Array.isArray(data.contents)
+      ? data.contents
+      : [];
+
+    contents.forEach(block => {
+
+      // 이미지 아닌 것은 제외
+      if (
+        block.class !== "Image" ||
+        !block.image
+      ) return;
+
+      // cell
+      const cell = document.createElement("div");
+      cell.className = "cell";
+
+      // image wrap
+      const wrap = document.createElement("div");
+      wrap.className = "image-wrap";
+
+      // image
+      const img = document.createElement("img");
+
+      img.src =
+        block.image?.display?.url ||
+        "";
+
+      wrap.appendChild(img);
+
+
+
+// caption
+const caption = document.createElement("div");
+caption.className = "caption";
+
+// Description만
+if (
+  block.description &&
+  typeof block.description === "string"
+) {
+
+  caption.textContent = block.description;
+
+} else {
+
+  caption.textContent = "";
+
+}
+
+
+      // append
+      cell.appendChild(wrap);
+      cell.appendChild(caption);
+
+      grid.appendChild(cell);
+
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
+}
+
+loadArenaImages();
+</script>
+</body>
+</html>
