@@ -1,8 +1,8 @@
 .grid{
   display: grid;
   grid-template-columns: repeat(6, 1fr); 
-  gap: 13px;
-  padding: 400px;
+  gap: 12px;
+  padding: 480px;
 }
 
 .cell{
@@ -74,16 +74,12 @@
 /* mobile */
 @media (max-width: 900px){
 
-  .image-wrap{
+.image-wrap{
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px dotted #000;
 
-    border: 1.5px solid #33ff33;
-
-    box-shadow:
-      0 0 4px #33ff33,
-      0 0 10px #33ff33,
-      0 0 18px #33ff33;
-
-  }
+}
 
 }
 
